@@ -1,10 +1,13 @@
+const NUMBER_TYPE_STR = 'number';
+
 function sum(a, b) {
   let a_num, b_num;
   try {
-    if ((typeof a !== 'number') || (typeof b !== 'number'))  {
-      throw new TypeError();
+    if ((typeof a === NUMBER_TYPE_STR) 
+      || (typeof b === NUMBER_TYPE_STR))  {
+        return +a + +b;
     } else {
-      return Number(a) + Number(b);
+      throw new TypeError();
     }
   } catch (e) {
     throw new TypeError();
